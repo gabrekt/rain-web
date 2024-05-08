@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000; /* Set background to black */
+}
+
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.raindrop {
+    position: absolute;
+    top: -100px; /* Start above the viewport */
+    width: 2px; /* Make the width a bit larger to ensure visibility */
+    height: 90px; /* Increase the height for visibility */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0.9; /* Ensure raindrops are not fully transparent */
+    animation: raindrop-fall linear infinite;
+}
+
+@keyframes raindrop-fall {
+    0% {
+        transform: translateY(-100px); /* Start from above the view */
+    }
+    100% {
+        transform: translateY(100vh); /* Move to the bottom of the view */
+    }
+}
